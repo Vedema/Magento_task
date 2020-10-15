@@ -1,0 +1,234 @@
+<?php
+/** @var \Magento\Catalog\Block\Product\View $block */
+
+?>
+
+<br/>
+
+<div class="row banner_popup" id="myBtn">
+	
+	<div class="col-sm-3 banner_image_cal">
+		<img src='<?php echo $this->getViewFileUrl('images/calculator-blue.png'); ?>' ></div>
+	<div class="col-sm-6 banner_text">
+		<h2>Finance Calculator</h2>
+		<p>Enjoy 0% interest with monthly installment plans from $300.00/month </p></div>
+	<div class="col-sm-3 banner_image_logo"><img src='<?php echo $this->getViewFileUrl('images/v12logo.png'); ?>' alt="logo"></div>
+	
+</div>
+
+
+<div id="myModal" class="popup_modal modal">
+	<div class="modal-content popup_text afo-form">
+		  	<span class="close">×</span>
+			
+		
+		<div class="col-left">
+			<div class="col-pad">
+			<h1>Available Finance Option</h1>
+				<p>Getting the new watch or jewellery of your dreams is now even easier with our easy to apply for finance options. Define how much deposit you are able to pay now and select the term of repayment.</p>
+			<h4>Deposit Payment</h4>
+			<p>This is the amount of money you pay upfront. Please be aware that you must pay a minimum of 10% upfront ($300.00) and maximum of ($1800.00).</p>
+			<input type="button" id="plus" class="button" value="+" style="margin-left:10px" onclick="PlusCaps()">
+			<input type="tel" id="caps" value="3000">
+			<input type="button" id="minus" class="button" value="-" style="margin-right:10px" onclick="MinusCaps()">
+			<h4>Repayment Condition</h4>
+			<p>You can choose how many months you want to repay your finance over. The longer the term the lower the monthly repayment.</p>
+			<select>
+			  <option>Interest Fee Finance (3 Months)</option>
+			  <option>Interest Fee Finance (3 Months)</option>
+			  <option>Interest Fee Finance (3 Months)</option>
+			</select>
+			<p>$900.00<br>per month</p>
+			<img src="http://localhost/magento2/pub/static/version1602664350/frontend/Magento/luma/en_US/images/v12logo.png" alt="logo">
+			</div>
+		</div>
+		<div class="col-right">
+			<div class="col-pad">
+			<h4>Finance Summary</h4>
+			<table border="0" cellpadding="0" cellspacing="0">
+			  <tbody>
+				<tr>
+				  <td>Deposit Payments</td>
+				  <td>£300.00</td>
+				</tr>
+				<tr>
+				  <td>Finance Amount</td>
+				  <td>£2700.00</td>
+				</tr>
+				<tr>
+				  <td>Repayment Term</td>
+				  <td>3 Months</td>
+				</tr>
+				<tr>
+				  <td>Interest Charged</td>
+				  <td>0%</td>
+				</tr>
+				<tr>
+				  <td>Installment Amount</td>
+				  <td>£900.00</td>
+				</tr>
+				<tr>
+				  <td>Annual Rate Of Interst</td>
+				  <td>0.00%</td>
+				</tr>
+				<tr>
+				  <td>Total Amount Payable</td>
+				  <td>£30000.00</td>
+				</tr>
+				<tr>
+				  <td>Total Amount Payable Now</td>
+				  <td>£30000.00</td>
+				</tr>
+			  </tbody>
+			</table>
+			<p>Please note v12 is only available to UK Residents over 18, subject to terms and conditions. To apply finance, please add the product to our shopping cart, proceed through checkout and select 'Pay by Finance' as your payment option. You will be redirected to v12 Finance website, where you can complete application form online. Your purchase will be delivered to the address provided on your application.</p>
+			<button href="#">Add Finance</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Styling starts here -->
+
+<style>
+.col-left .col-pad #caps {
+	width: auto; 
+}
+
+.banner_popup{
+	display: flex;
+    flex-direction: row;
+    border: 1px;
+    border-style: solid;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-color: #dedede;
+}
+.modal {
+  z-index:9999;
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+   /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.afo-form{ position: relative; display:table;}
+.afo-form span.close{ position: absolute;
+right: -10px;
+top: -10px;
+width: 30px;
+height: 30px;
+display: block;
+text-align: center;
+line-height: 30px;
+font-size: 30px;
+background: white;
+box-shadow: 0 6px 10px -6px;}
+.afo-form .popup_text{}
+.afo-form .col-left{ float: left; width: 50%;}
+.afo-form .col-right{ float: left; width: 50%; background: #f6f6f6;}
+.afo-form .col-right h4{ margin: 0 0 1em;}
+.afo-form .col-pad{ padding:1em;}
+.afo-form table{ width: 100%; border: 1px solid #cccccc; border-bottom: 0; margin-bottom: 20px;}
+.afo-form table td{ padding: 5px 10px; border-bottom: 1px solid #cccccc;}
+.afo-form table td:nth-child(2){ border-left: 1px solid #cccccc;}
+@media (max-width: 767px){
+.col-left,
+.col-right{ width: 100% !important; float:none !important;}
+}
+</style>
+
+<!-- Styling ends here -->
+
+<!-- JS codes starts -->
+
+<script>
+window.onload = function() {
+  //var CapsNum = localStorage.getItem("CapsNum");
+
+  if (CapsNum == null) {
+    CapsNum = "0";
+  } else {
+    document.getElementById("caps").value = CapsNum;
+  }
+}
+window.onbeforeunload = function() {
+  localStorage.setItem("CapsNum", document.getElementById("caps").value);
+}
+
+function PlusCaps() { //Increment
+	var nextValue = parseInt(document.getElementById("caps").value) + 1;
+  setNextValue(nextValue);
+}
+
+function MinusCaps() { //Decrement
+	var nextValue = parseInt(document.getElementById("caps").value) - 1;
+  setNextValue(nextValue);
+}
+
+function setNextValue(nextValue) {
+  //localStorage.setItem("CapsNum", nextValue);
+  document.getElementById("caps").value = nextValue;
+}
+
+
+
+var modal = document.getElementById("myModal");
+
+var btn = document.getElementById("myBtn");
+ 
+	
+
+
+var span = document.getElementsByClassName("close")[0];
+
+btn.onclick = function()  {
+
+  modal.style.display = "block";
+}
+
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+
+}
+</script>
+
+<!-- End of JS code -->
